@@ -4,7 +4,11 @@ import Expand from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Expand.js";
 import WebScene from "https://js.arcgis.com/4.25/@arcgis/core/WebScene.js";
 import SceneView from "https://js.arcgis.com/4.25/@arcgis/core/views/SceneView.js";
 
+import esriConfig from "https://js.arcgis.com/4.25/@arcgis/core/config.js";
+
+
 esriConfig.apiKey = "AAPK172864bc9b83465ca62bdb1118af560fije2SBSBx1VgYwU9-7VHnV2P4vTYU03PpxRXnMZIbbkiU1CHdegeNRA8j8lsqpjC";
+
 
 const webScene = new WebScene({
   portalItem: {

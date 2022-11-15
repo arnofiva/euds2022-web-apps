@@ -4,8 +4,8 @@ import Expand from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Expand.js";
 import WebScene from "https://js.arcgis.com/4.25/@arcgis/core/WebScene.js";
 import SceneView from "https://js.arcgis.com/4.25/@arcgis/core/views/SceneView.js";
 
-import IdentityManager from "https://js.arcgis.com/4.25/@arcgis/core/identity/IdentityManager";
-import OAuthInfo from "https://js.arcgis.com/4.25/@arcgis/core/identity/OAuthInfo";
+import IdentityManager from "https://js.arcgis.com/4.25/@arcgis/core/identity/IdentityManager.js";
+import OAuthInfo from "https://js.arcgis.com/4.25/@arcgis/core/identity/OAuthInfo.js";
 
 IdentityManager.registerOAuthInfos([
   new OAuthInfo({
