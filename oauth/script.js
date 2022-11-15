@@ -1,6 +1,4 @@
-import BasemapGallery from "https://js.arcgis.com/4.25/@arcgis/core/widgets/BasemapGallery.js";
-import Search from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Search.js";
-import Expand from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Expand.js";
+import BuildingExplorer from "https://js.arcgis.com/4.25/@arcgis/core/widgets/BuildingExplorer.js";
 import WebScene from "https://js.arcgis.com/4.25/@arcgis/core/WebScene.js";
 import SceneView from "https://js.arcgis.com/4.25/@arcgis/core/views/SceneView.js";
 
@@ -30,18 +28,17 @@ const view = new SceneView({
   container: "viewDiv"
 });
 
-view.ui.add(
-  new Expand({
-    content: new Search({ view }),
-    group: "tools"
-  }),
-  "top-right"
-);
 
-view.ui.add(
-  new Expand({
-    content: new BasemapGallery({ view }),
-    group: "tools"
-  }),
-  "top-right"
-);
+view.when(() => {
+  // get the BuildingSceneLayer from the webscene
+  webScene.allLayers.forEach((layer) => {
+    if (layer.title === "Esri Building E Demo") {
+      // explore components in the layer using the BuildingExplorer widget
+      const buildingExplorer = new BuildingExplorer({
+        view: view,
+        layers: [layer]
+      });
+      view.ui.add(buildingExplorer, "top-right");
+    }
+  });
+});
