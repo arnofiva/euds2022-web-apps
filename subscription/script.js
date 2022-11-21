@@ -1,6 +1,7 @@
 import BasemapGallery from "https://js.arcgis.com/4.25/@arcgis/core/widgets/BasemapGallery.js";
 import Search from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Search.js";
 import Expand from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Expand.js";
+import Track from "https://js.arcgis.com/4.25/@arcgis/core/widgets/Track.js";
 import WebScene from "https://js.arcgis.com/4.25/@arcgis/core/WebScene.js";
 import SceneView from "https://js.arcgis.com/4.25/@arcgis/core/views/SceneView.js";
 
@@ -33,6 +34,14 @@ view.ui.add(
 view.ui.add(
   new Expand({
     content: new BasemapGallery({ view }),
+    group: "tools"
+  }),
+  "top-right"
+);
+
+view.ui.add(
+  new Expand({
+    content: new Track({ view }),
     group: "tools"
   }),
   "top-right"
