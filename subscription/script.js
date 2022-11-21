@@ -40,9 +40,9 @@ view.ui.add(
 );
 
 view.ui.add(
-  new Expand({
-    content: new Track({ view }),
-    group: "tools"
+  new Track({
+    view,
+    useHeadingEnabled: true
   }),
   "top-right"
 );
